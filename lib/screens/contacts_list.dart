@@ -1,3 +1,4 @@
+import 'package:bytebank_salvamento_arquivos/components/progress.dart';
 import 'package:bytebank_salvamento_arquivos/models/contact.dart';
 import 'package:flutter/material.dart';
 import 'package:bytebank_salvamento_arquivos/database/dao/contact_dao.dart';
@@ -24,16 +25,7 @@ class _ContactsListState extends State<ContactsList> {
             case ConnectionState.none:
               break;
             case ConnectionState.waiting:
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text('Loading'),
-                  ],
-                ),
-              );
+              return Progress();
             case ConnectionState.active:
               break;
             case ConnectionState.done:
