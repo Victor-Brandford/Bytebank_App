@@ -1,4 +1,3 @@
-
 import 'package:bytebank_salvamento_arquivos/components/centered_message.dart';
 import 'package:bytebank_salvamento_arquivos/components/progress.dart';
 import 'package:bytebank_salvamento_arquivos/http/webclient.dart';
@@ -14,12 +13,12 @@ class TransactionsList extends StatelessWidget {
       ),
       body: FutureBuilder<List<Transaction>>(
         future: findAll(),
-        builder: (context, snapshot){
-          switch(snapshot.connectionState){
+        builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
             case ConnectionState.done:
-              if(snapshot.hasData){
+              if (snapshot.hasData) {
                 final List<Transaction>? transactions = snapshot.data;
-                if(transactions!.isNotEmpty){
+                if (transactions!.isNotEmpty) {
                   return ListView.builder(
                     itemBuilder: (context, index) {
                       final Transaction transaction = transactions[index];
@@ -56,7 +55,10 @@ class TransactionsList extends StatelessWidget {
               // TODO: Handle this case.
               break;
           }
-          return CenteredMessage('NO TRANSACTIONS FOUND', icon: Icons.warning,);
+          return CenteredMessage(
+            'NO TRANSACTIONS FOUND',
+            icon: Icons.warning,
+          );
         },
       ),
     );
