@@ -52,7 +52,7 @@ Future<List<Transaction>> findAll() async {
   return transactions;
 }
 
-void save(Transaction transaction) async {
+Future<Transaction> save(Transaction transaction) async {
   final Map<String, dynamic> transactionMap ={
     'value' : transaction.value,
     'contact' :{
@@ -67,4 +67,14 @@ void save(Transaction transaction) async {
         'Content-type': 'application/json',
         'password': '1000',
       },body:  TransactionJson);
+  Map<String, dynamic> json = jsonDecode(response.body);
+  final Map<String, dynamic> contactJson = json['contact'];
+  return Transaction(
+    json['value'],
+    Contact(
+      0,
+      contactJson['name'],
+      contactJson['accountNumber'],
+    ),
+  );
 }

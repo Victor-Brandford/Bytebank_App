@@ -1,6 +1,8 @@
 import 'package:bytebank_salvamento_arquivos/components/centered_message.dart';
 import 'package:bytebank_salvamento_arquivos/components/progress.dart';
 import 'package:bytebank_salvamento_arquivos/http/webclient.dart';
+import 'package:bytebank_salvamento_arquivos/components/Textsubtitle.dart';
+import 'package:bytebank_salvamento_arquivos/components/Texttitle.dart';
 import 'package:bytebank_salvamento_arquivos/models/Transactions.dart';
 import 'package:flutter/material.dart';
 
@@ -25,19 +27,8 @@ class TransactionsList extends StatelessWidget {
                       return Card(
                         child: ListTile(
                           leading: Icon(Icons.monetization_on),
-                          title: Text(
-                            transaction.value.toString(),
-                            style: TextStyle(
-                              fontSize: 24.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          subtitle: Text(
-                            transaction.contact.accountNumber.toString(),
-                            style: TextStyle(
-                              fontSize: 16.0,
-                            ),
-                          ),
+                          title: title(transaction: transaction,),
+                          subtitle: subtitle(transaction: transaction,),
                         ),
                       );
                     },
