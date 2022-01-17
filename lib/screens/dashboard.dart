@@ -32,10 +32,18 @@ class Dashboard extends StatelessWidget {
                     onClick: () {
                   _showTransactionFeed(context);
                 }),
-                _FeatureItem('Transaction Feed', Icons.description,
+                _FeatureItem('Novo butão ', Icons.description,
                     onClick: () {
                   print('transfer was clicked');
                 }),
+                _FeatureItem('Novo butão ', Icons.description,
+                    onClick: () {
+                      print('transfer was clicked');
+                    }),
+                _FeatureItem('Novo butão ', Icons.description,
+                    onClick: () {
+                      print('transfer was clicked');
+                    }),
               ],
             ),
           ),

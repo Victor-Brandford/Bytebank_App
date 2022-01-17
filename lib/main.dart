@@ -1,8 +1,6 @@
 import 'package:bytebank_salvamento_arquivos/screens/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'http/webclient.dart';
-import 'models/Transactions.dart';
-import 'models/contact.dart';
+
 
 void main() {
   runApp(bytebank());

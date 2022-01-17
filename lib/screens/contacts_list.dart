@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:bytebank_salvamento_arquivos/database/dao/contact_dao.dart';
 import 'contact_form.dart';
 
-class ContactsList extends StatefulWidget {
+class  ContactsList extends StatefulWidget {
   @override
   State<ContactsList> createState() => _ContactsListState();
 }
