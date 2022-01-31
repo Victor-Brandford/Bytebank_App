@@ -1,6 +1,8 @@
 import 'package:bytebank_salvamento_arquivos/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
+import 'components/transaction_auth_dialog.dart';
+
 
 void main() {
   runApp(bytebank());
